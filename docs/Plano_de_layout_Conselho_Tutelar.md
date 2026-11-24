@@ -4,7 +4,7 @@
 
 A primeira ação no Início é **Preciso de ajuda**. A segunda tela organiza os canais pela situação que trouxe a pessoa ao app. O guia e o diretório aparecem na mesma navegação, para quem quer entender seus direitos ou encontrar atendimento em Boituva.
 
-O commit `736d7c8` já contém Início e Preciso de ajuda, catálogo offline e testes do fluxo de ligação, cópia e falha de abertura. O plano reaproveita essa jornada e detalha as telas que faltam. Os rótulos, a ordem dos blocos e a identidade visual abaixo são propostas para o protótipo.
+O plano parte da jornada Início e Preciso de ajuda e descreve as telas e os critérios de aceite. Consulte [Requisitos e evidências](requisitos.md) para acompanhar a implantação e a liberação de conteúdo.
 
 ## Navegação
 
@@ -47,7 +47,7 @@ A ordem em cada linha corresponde ao que aparece de cima para baixo no celular. 
 
 | Elemento ou situação | Especificação |
 | --- | --- |
-| Identidade visual | Material 3, fundo claro neutro, azul-petróleo como cor primária sugerida e vermelho reservado para sinalizar urgências. Combinar texto e ícone, com contraste conferido em cada combinação. Usar a tipografia Material 3 com corpo de 16 sp como referência, títulos claros e links reconhecíveis. |
+| Identidade visual | Material 3 com fundo claro, verde-petróleo e ícones lineares acompanhados por rótulos. O 190 tem destaque vermelho, Direitos usa azul e orientações de acolhimento usam âmbar. Painéis de título, cartões e ações seguem a mesma hierarquia tipográfica. |
 | Espaçamento e fonte ampliada | Base de 16 dp nas margens e cartões, 8 dp entre itens relacionados e 24 dp entre blocos. Áreas de toque de pelo menos 48 dp. Usar coluna rolável, alturas flexíveis e ações empilhadas quando uma linha não comportar a fonte. Respeitar os insets das barras do Android. |
 | Cartão de contato | Nome e telefone primeiro, discador em destaque, ações secundárias de copiar ou abrir outro serviço e bloco expansível de fonte e data. Rótulos de acessibilidade incluem o nome do órgão, inclusive quando o botão visível é curto. |
 | Copiar ou falhar ao abrir | Exibir “Número copiado” após a ação. Em falha, informar qual serviço não abriu e indicar “Copiar número” ou outro canal disponível no próprio cartão. O app abre o discador preenchido e a confirmação ocorre no sistema. |

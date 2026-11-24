@@ -7,6 +7,7 @@ internal enum class Category(val key: String, val label: String) {
 }
 
 internal data class Channel(
+    val id: String,
     val name: String,
     val category: Category,
     val phone: String,
@@ -19,6 +20,8 @@ internal data class Channel(
 internal sealed interface ExternalAction {
     data class Dial(val phone: String) : ExternalAction
     data class OpenLink(val url: String) : ExternalAction
+    data class OpenMap(val address: String) : ExternalAction
+    data class ShareLink(val url: String) : ExternalAction
 
     companion object {
         fun whatsApp(number: String) = OpenLink("https://wa.me/$number")

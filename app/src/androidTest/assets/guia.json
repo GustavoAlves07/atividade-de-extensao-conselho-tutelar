@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "articles": [
+    {
+      "sources": [
+        {
+          "name": "Fonte fictícia",
+          "url": "https://example.org/fonte"
+        }
+      ],
+      "checkedOn": "2026-01-01",
+      "status": "verificado_em_fonte_publica",
+      "id": "comunicar_suspeita",
+      "title": "Como comunicar uma suspeita",
+      "summary": "Orientação de exemplo.",
+      "sections": [
+        {
+          "heading": "Como acolher",
+          "body": "Texto fictício para testar o guia."
+        }
+      ],
+      "channelIds": [
+        "conselho_teste"
+      ]
+    },
+    {
+      "sources": [
+        {
+          "name": "Fonte fictícia",
+          "url": "https://example.org/fonte"
+        }
+      ],
+      "checkedOn": "2026-01-01",
+      "status": "pendente",
+      "id": "rascunho",
+      "title": "Artigo em revisão",
+      "summary": "Texto em revisão.",
+      "sections": [
+        {
+          "heading": "Rascunho",
+          "body": "Texto fictício."
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "sources": [
+        {
+          "name": "Fonte fictícia",
+          "url": "https://example.org/fonte"
+        }
+      ],
+      "checkedOn": "2026-01-01",
+      "status": "verificado_em_fonte_publica",
+      "id": "pergunta",
+      "question": "Pergunta de exemplo?",
+      "answer": "Resposta de exemplo.",
+      "articleId": "comunicar_suspeita"
+    }
+  ]
+}

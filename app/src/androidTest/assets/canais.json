@@ -1,6 +1,6 @@
 [
   {
-    "id": "policia_teste", "name": "Polícia de exemplo", "category": "policial",
+    "id": "policia", "name": "Polícia de exemplo", "category": "policial",
     "phone": "000", "source": "https://example.org/policia",
     "checkedOn": "2026-01-01", "status": "verificado_em_fonte_publica"
   },

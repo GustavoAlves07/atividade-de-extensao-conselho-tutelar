@@ -32,15 +32,20 @@ kotlin {
 }
 
 val catalogFile = layout.projectDirectory.file("src/main/assets/canais.json")
+val offlineFiles = listOf("guia.json", "rede_protecao.json", "editorial.json").map {
+    layout.projectDirectory.file("src/main/assets/$it").asFile
+}
 val validatorFile = rootProject.layout.projectDirectory.file("scripts/verify_content.py")
 val verifyContent by tasks.registering(Exec::class) {
     group = "verification"
-    description = "Valida as referências e os destinos do catálogo local."
-    inputs.files(catalogFile, validatorFile)
+    description = "Valida o catálogo de contatos e o conteúdo offline."
+    inputs.files(catalogFile, validatorFile, offlineFiles)
     commandLine(
         providers.environmentVariable("PYTHON").getOrElse("python3"),
         validatorFile.asFile.absolutePath,
         catalogFile.asFile.absolutePath,
+        "--offline",
+        *offlineFiles.map { it.absolutePath }.toTypedArray(),
     )
 }
 

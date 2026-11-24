@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "services": [
+    {
+      "sources": [
+        {
+          "name": "Fonte fictícia",
+          "url": "https://example.org/fonte"
+        }
+      ],
+      "checkedOn": "2026-01-01",
+      "status": "verificado_em_fonte_publica",
+      "id": "servico_teste",
+      "name": "Serviço de exemplo",
+      "category": "assistencia_social",
+      "summary": "Atendimento fictício.",
+      "phone": "11900000000",
+      "address": {
+        "street": "Rua de Exemplo",
+        "number": "123",
+        "city": "Cidade de Exemplo",
+        "state": "SP"
+      }
+    },
+    {
+      "sources": [
+        {
+          "name": "Fonte fictícia",
+          "url": "https://example.org/fonte"
+        }
+      ],
+      "checkedOn": "2026-01-01",
+      "status": "verificado_em_fonte_publica",
+      "id": "sem_endereco",
+      "name": "Serviço sem endereço",
+      "category": "assistencia_social",
+      "summary": "Dados parciais."
+    },
+    {
+      "sources": [
+        {
+          "name": "Fonte fictícia",
+          "url": "https://example.org/fonte"
+        }
+      ],
+      "checkedOn": "2026-01-01",
+      "status": "pendente",
+      "id": "em_revisao",
+      "name": "Serviço em revisão",
+      "category": "assistencia_social",
+      "summary": "Dados em revisão."
+    }
+  ],
+  "supportTopics": [
+    {
+      "sources": [
+        {
+          "name": "Fonte fictícia",
+          "url": "https://example.org/fonte"
+        }
+      ],
+      "checkedOn": "2026-01-01",
+      "status": "verificado_em_fonte_publica",
+      "id": "tema",
+      "title": "Apoio de exemplo",
+      "summary": "Orientação fictícia.",
+      "serviceIds": [
+        "servico_teste"
+      ]
+    }
+  ]
+}

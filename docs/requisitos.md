@@ -1,20 +1,34 @@
 # Requisitos e evidências
 
-Baseado no levantamento de informações do projeto. **Implementado** indica código disponível para a jornada indicada. A execução dos testes Android deve ser registrada pela CI ou por quem rodar os comandos do README.
+Baseado no levantamento de informações do projeto. **Implementado** indica código disponível para a jornada. As liberações de conteúdo e as confirmações municipais são registradas em [Validação de campo](validacao-campo.md).
 
 | ID | Requisito | Estado e evidência |
 |---|---|---|
-| RF01 | Acesso rápido a ajuda | Implementado. `HelpFlowTest` cobre a navegação e as três categorias. |
-| RF02 | Contatos oficiais | Implementado na primeira jornada. Testes cobrem ação de telefone, cópia e fallback. A CI verifica o formato do catálogo. |
-| RF03 | Orientações sobre denúncia e acolhimento | Conteúdo inicial em `guia.json`, com referências para acolhimento, anonimato e protocolo. Tela e revisão editorial planejadas. |
-| RF04 | Guia sobre o Conselho e o ECA | Conteúdo inicial em `guia.json`, com artigos, FAQ e referências. Tela e revisão editorial planejadas. |
-| RF05 | Diretório da rede de proteção | Catálogo inicial em `rede_protecao.json`. Integração da tela, abertura de rota e validação local pendentes. |
-| RF06 | Campanhas e materiais educativos | Desejável. Testar fonte, vigência e compartilhamento quando implementado. |
-| RF07 | Colaboração editorial | Processo pendente de validação com o Conselho. Usar `validacao-campo.md` e registrar aprovação de conteúdo. |
-| RF08 | Sugestão de correções | Desejável. Validar canal editorial e instrução para relatos de casos. |
-| RNF01 | Acesso público e privacidade | Primeira jornada sem cadastro, formulários ou permissões. Conferir o manifesto e os fluxos a cada entrega. |
-| RNF02 | Acessibilidade Android | Controles com texto e áreas mínimas de toque de 48 dp. Validar TalkBack, contraste e fonte ampliada no dispositivo. |
-| RNF03 | Consulta offline | Dados dos contatos estão no APK. Validar abertura a frio em modo avião. |
-| RNF04 | Conteúdo atualizado | Validador exige fonte, data e estado. Confirmar responsável editorial e encaminhar pendências. |
-| RNF05 | Comunicação clara | Primeira jornada identifica o serviço externo e permite copiar o telefone se a abertura falhar. |
-| RNF06 | Identificação institucional | Identificação acadêmica está no Início. Tela Sobre e aprovação de materiais institucionais serão tratadas antes da publicação. |
+| RF01 | Acesso rápido a ajuda | Implementado. Início abre Ajuda e oferece atalho de urgência policial. `HelpFlowTest` cobre as três categorias e confirma que o atalho usa o mesmo número do cartão. |
+| RF02 | Contatos oficiais | Implementado. Cartões apresentam fonte e data de conferência. `HelpFlowTest` cobre discador, cópia e fallback com contatos fictícios. `verifyContent` verifica o catálogo. |
+| RF03 | Orientações sobre denúncia e acolhimento | Implementado. A orientação offline liga Ajuda aos artigos e apresenta acolhimento, anonimato e protocolo com referências. `ContentFlowTest` verifica a navegação nos dois sentidos. Revisão editorial da equipe pendente. |
+| RF04 | Guia sobre o Conselho e o ECA | Implementado. Direitos apresenta artigos, perguntas expansíveis e referências. `ContentFlowTest` cobre leitura e volta à pergunta expandida. Revisão editorial da equipe pendente. |
+| RF05 | Diretório da rede de proteção | Implementado. Rede apresenta serviços por categoria, orientações de apoio e fichas com contatos e dados disponíveis. `ContentFlowTest` verifica o destino do mapa e a ausência de campos municipais indisponíveis. Confirmações locais registradas em Validação de campo. |
+| RF06 | Campanhas e materiais educativos | Implementado com exibição condicionada à aprovação e à vigência. `ContentFlowTest` verifica visibilidade, material externo e folha de compartilhamento usando fixtures. Publicação de materiais oficiais pendente. |
+| RF07 | Colaboração editorial | Fluxo de revisão e registro documentado em Validação de campo. Definição do responsável e aprovação do processo pendentes com o Conselho. |
+| RF08 | Sugestão de correções | Implementado em Sobre para um destino editorial aprovado. A tela direciona relatos aos canais oficiais de ajuda. `ContentFlowTest` verifica o encaminhamento com destino fictício. Canal oficial pendente. |
+| RNF01 | Acesso público e privacidade | As jornadas são públicas e o manifesto dispensa permissões de telefone, localização e internet. O app encaminha aos serviços externos e dispensa cadastro e formulários de relatos. |
+| RNF02 | Acessibilidade Android | Navegação, categorias e ações combinam ícones com rótulos. Controles com áreas mínimas de toque de 48 dp, cabeçalhos semânticos, seleção na navegação e estado acessível para seções expansíveis. Contraste das combinações principais de texto e fundo acima de 4,5:1. Validação com TalkBack em dispositivo pendente. |
+| RNF03 | Consulta offline | Contatos, artigos, perguntas e fichas são carregados do APK. `verifyContent` valida os arquivos e os vínculos. Abertura a frio e consulta em modo avião conferidas no emulador. |
+| RNF04 | Conteúdo atualizado | O validador exige fonte, data e estado editorial, confirma referências e verifica destinos e datas de vigência. Confirmação do responsável e pendências de dados seguem em Validação de campo. |
+| RNF05 | Comunicação clara | As ações identificam o discador ou serviço externo. Os números podem ser copiados e os endereços ficam visíveis na ficha, inclusive se o mapa falhar. |
+| RNF06 | Identificação institucional | Início e Sobre identificam o projeto acadêmico. Sobre apresenta o objetivo e as fontes de referência. Materiais de identidade institucional aguardam aprovação. |
+
+## Verificação local em 23/11/2026
+
+- Validação dos quatro arquivos de conteúdo e oito testes Python aprovados.
+- Dois testes unitários Android aprovados e APK de depuração compilado com JDK 17.
+- Cinco testes instrumentados aprovados no emulador Android 13, com destinos fictícios e ações externas interceptadas.
+- APK aberto a frio em modo avião com fonte a 150%. Conferida a leitura do 190, da orientação do Disque 100 e do endereço do CRAS Central.
+- Lint sem erros e com quatro avisos sobre versões de dependências, ícone do app e regras de backup no manifesto.
+
+## Revisão visual em 23/11/2026
+
+- Início, Ajuda, Direitos, Rede, fichas, orientações e Sobre revisados com a nova identidade. Ações e categorias usam ícone e texto, com destaque visual para o 190.
+- Oito testes Python, dois testes unitários Android e cinco testes instrumentados aprovados. APK de depuração compilado e lint sem erros, com três avisos sobre versões de dependências e regras de backup.
+- Capturas conferidas no emulador Android 13. Leitura do 190, da orientação do Disque 100 e da ficha do CRAS Central conferida em modo avião com fonte a 150%.

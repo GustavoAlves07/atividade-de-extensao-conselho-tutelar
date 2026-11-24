@@ -30,12 +30,13 @@ class HelpFlowTest {
                 channels = channels,
                 openAction = {
                     actions.add(it)
-                    false
+                    actions.size == 1
                 },
                 copyPhone = { _, number -> copiedNumbers.add(number) },
             )
         }
 
+        compose.onNodeWithText("Polícia de exemplo").performScrollTo().performClick()
         compose.onNodeWithText("Preciso de ajuda").performClick()
         listOf("Urgência policial", "Emergência médica", "Comunicar uma suspeita ou violação").forEach {
             compose.onNodeWithText(it).performScrollTo().assertIsDisplayed()
@@ -46,7 +47,7 @@ class HelpFlowTest {
         compose.onNodeWithText("Copiar telefone de Polícia de exemplo").performScrollTo().performClick()
 
         compose.runOnIdle {
-            assertEquals(listOf(ExternalAction.Dial("000")), actions)
+            assertEquals(listOf(ExternalAction.Dial("000"), ExternalAction.Dial("000")), actions)
             assertEquals(listOf("000"), copiedNumbers)
         }
     }

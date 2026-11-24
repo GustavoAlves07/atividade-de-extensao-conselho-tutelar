@@ -2,14 +2,19 @@ import json
 import unittest
 from pathlib import Path
 
-from verify_content import validate_catalog
+from verify_content import validate_catalog, validate_offline_content
+
+
+ASSETS = Path(__file__).resolve().parents[1] / "app/src/main/assets"
+
+
+def read_asset(name):
+    return json.loads((ASSETS / f"{name}.json").read_text(encoding="utf-8"))
 
 
 class CatalogValidationTest(unittest.TestCase):
     def setUp(self):
-        root = Path(__file__).resolve().parents[1]
-        source = root / "app/src/main/assets/canais.json"
-        self.catalog = json.loads(source.read_text(encoding="utf-8"))
+        self.catalog = read_asset("canais")
 
     def test_accepts_packaged_catalog(self):
         self.assertEqual([], validate_catalog(self.catalog))
@@ -35,3 +40,40 @@ class CatalogValidationTest(unittest.TestCase):
         errors = validate_catalog(self.catalog)
         for field in ("id", "status", "phone"):
             self.assertTrue(any(f").{field}:" in error for error in errors), errors)
+
+
+class OfflineContentValidationTest(unittest.TestCase):
+    def setUp(self):
+        self.channels = read_asset("canais")
+        self.guide = read_asset("guia")
+        self.network = read_asset("rede_protecao")
+        self.editorial = read_asset("editorial")
+
+    def validate(self):
+        return validate_offline_content(self.channels, self.guide, self.network, self.editorial)
+
+    def test_accepts_packaged_content(self):
+        self.assertEqual([], self.validate())
+
+    def test_rejects_published_reference_to_pending_or_missing_service(self):
+        self.network["services"][1]["status"] = "pendente"
+        self.guide["faq"][0]["articleId"] = "inexistente"
+        errors = self.validate()
+        self.assertTrue(any("articleId: referência a registro inexistente" in error for error in errors), errors)
+        self.assertTrue(any("serviceIds: referência publicada aponta para registro pendente" in error for error in errors), errors)
+
+    def test_rejects_bad_campaign_dates_and_insecure_editorial_destination(self):
+        self.editorial["campaigns"] = [{
+            "title": "Campanha fictícia",
+            "summary": "Material de teste.",
+            "materialUrl": "https://example.org/material",
+            "sources": [{"name": "Fonte fictícia", "url": "https://example.org/fonte"}],
+            "status": "validado_com_orgao",
+            "checkedOn": "2026-01-01",
+            "startsOn": "2026-02-01",
+            "endsOn": "2026-01-01",
+        }]
+        self.editorial["corrections"] = self.editorial["campaigns"][0] | {"url": "http://example.org/"}
+        errors = self.validate()
+        self.assertTrue(any("vigência" in error for error in errors), errors)
+        self.assertIn("corrections.url: informe uma URL HTTPS.", errors)

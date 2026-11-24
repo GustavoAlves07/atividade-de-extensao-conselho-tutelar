@@ -14,6 +14,7 @@ internal fun loadChannels(assets: AssetManager): List<Channel> {
             val category = entry.getString("category")
             add(
                 Channel(
+                    id = entry.getString("id"),
                     name = entry.getString("name"),
                     category = Category.entries.first { it.key == category },
                     phone = entry.getString("phone"),

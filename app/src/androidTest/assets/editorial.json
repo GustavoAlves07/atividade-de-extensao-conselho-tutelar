@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "campaigns": [
+    {
+      "sources": [
+        {
+          "name": "Fonte fictícia",
+          "url": "https://example.org/fonte"
+        }
+      ],
+      "checkedOn": "2026-01-01",
+      "status": "validado_com_orgao",
+      "title": "Campanha de exemplo",
+      "summary": "Material fictício.",
+      "materialUrl": "https://example.org/material"
+    },
+    {
+      "sources": [
+        {
+          "name": "Fonte fictícia",
+          "url": "https://example.org/fonte"
+        }
+      ],
+      "checkedOn": "2026-01-01",
+      "status": "validado_com_orgao",
+      "title": "Campanha encerrada",
+      "summary": "Material fictício.",
+      "materialUrl": "https://example.org/encerrada",
+      "endsOn": "2000-01-01"
+    },
+    {
+      "sources": [
+        {
+          "name": "Fonte fictícia",
+          "url": "https://example.org/fonte"
+        }
+      ],
+      "checkedOn": "2026-01-01",
+      "status": "pendente",
+      "title": "Campanha em revisão",
+      "summary": "Material fictício.",
+      "materialUrl": "https://example.org/revisao"
+    },
+    {
+      "sources": [
+        {
+          "name": "Fonte fictícia",
+          "url": "https://example.org/fonte"
+        }
+      ],
+      "checkedOn": "2026-01-01",
+      "status": "verificado_em_fonte_publica",
+      "title": "Campanha sem aprovação",
+      "summary": "Material fictício.",
+      "materialUrl": "https://example.org/aguardando"
+    }
+  ],
+  "corrections": {
+    "sources": [
+      {
+        "name": "Fonte fictícia",
+        "url": "https://example.org/fonte"
+      }
+    ],
+    "checkedOn": "2026-01-01",
+    "status": "validado_com_orgao",
+    "url": "https://example.org/correcoes"
+  }
+}
