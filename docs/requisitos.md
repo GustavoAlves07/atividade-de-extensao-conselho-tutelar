@@ -6,9 +6,9 @@ Baseado no levantamento de informações do projeto. **Implementado** indica có
 |---|---|---|
 | RF01 | Acesso rápido a ajuda | Implementado. `HelpFlowTest` cobre a navegação e as três categorias. |
 | RF02 | Contatos oficiais | Implementado na primeira jornada. Testes cobrem ação de telefone, cópia e fallback. A CI verifica o formato do catálogo. |
-| RF03 | Orientações sobre denúncia e acolhimento | Planejado. Revisar anonimato, protocolo e orientações com fontes oficiais. |
-| RF04 | Guia sobre o Conselho e o ECA | Planejado. Revisar páginas educativas, FAQ e referências. |
-| RF05 | Diretório da rede de proteção | Planejado. Validar fichas com a rede e testar abertura de rota. |
+| RF03 | Orientações sobre denúncia e acolhimento | Conteúdo inicial em `guia.json`, com referências para acolhimento, anonimato e protocolo. Tela e revisão editorial planejadas. |
+| RF04 | Guia sobre o Conselho e o ECA | Conteúdo inicial em `guia.json`, com artigos, FAQ e referências. Tela e revisão editorial planejadas. |
+| RF05 | Diretório da rede de proteção | Catálogo inicial em `rede_protecao.json`. Integração da tela, abertura de rota e validação local pendentes. |
 | RF06 | Campanhas e materiais educativos | Desejável. Testar fonte, vigência e compartilhamento quando implementado. |
 | RF07 | Colaboração editorial | Processo pendente de validação com o Conselho. Usar `validacao-campo.md` e registrar aprovação de conteúdo. |
 | RF08 | Sugestão de correções | Desejável. Validar canal editorial e instrução para relatos de casos. |

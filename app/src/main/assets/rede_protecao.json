@@ -1,0 +1,160 @@
+{
+  "schemaVersion": 1,
+  "services": [
+    {
+      "id": "conselho_tutelar",
+      "name": "Conselho Tutelar de Boituva",
+      "category": "protecao_de_direitos",
+      "summary": "Orienta e atua em situações de ameaça ou violação de direitos de crianças e adolescentes.",
+      "channelIds": [
+        "conselho"
+      ],
+      "sources": [
+        {
+          "name": "Estatuto da Criança e do Adolescente — Lei nº 8.069/1990",
+          "url": "https://www.planalto.gov.br/ccivil_03/leis/l8069compilado.htm"
+        },
+        {
+          "name": "Conselho Tutelar de Boituva — fonte do catálogo",
+          "url": "https://www.boituva.sp.gov.br/imprensa/noticias/maio-laranja-5"
+        }
+      ],
+      "checkedOn": "2026-11-23",
+      "status": "verificado_em_fonte_publica"
+    },
+    {
+      "id": "cras_central",
+      "name": "CRAS Central",
+      "category": "assistencia_social",
+      "summary": "Orienta famílias em situação de vulnerabilidade sobre serviços e benefícios socioassistenciais.",
+      "phone": "1532632322",
+      "whatsapp": "551532632322",
+      "address": {
+        "street": "Rua João Marcon",
+        "number": "283",
+        "district": "Parque Nossa Senhora das Graças",
+        "city": "Boituva",
+        "state": "SP"
+      },
+      "openingHours": "Segunda a sexta-feira, das 8h às 17h.",
+      "sources": [
+        {
+          "name": "Prefeitura de Boituva — Conheça o CRAS",
+          "url": "https://www.boituva.sp.gov.br/voce-conhece-o-cras"
+        },
+        {
+          "name": "Prefeitura de Boituva — Novos telefones de atendimento",
+          "url": "https://www.boituva.sp.gov.br/-novos-telefones-de-atendimento-"
+        }
+      ],
+      "checkedOn": "2026-11-23",
+      "status": "verificado_em_fonte_publica"
+    },
+    {
+      "id": "cras_novo_mundo",
+      "name": "CRAS Novo Mundo",
+      "category": "assistencia_social",
+      "summary": "Unidade de referência da assistência social para orientação e acompanhamento de famílias.",
+      "sources": [
+        {
+          "name": "Prefeitura de Boituva — Conheça o CRAS",
+          "url": "https://www.boituva.sp.gov.br/voce-conhece-o-cras"
+        }
+      ],
+      "checkedOn": "2026-11-23",
+      "status": "verificado_em_fonte_publica"
+    },
+    {
+      "id": "creas",
+      "name": "CREAS de Boituva",
+      "category": "assistencia_social",
+      "summary": "Oferece atendimento especializado a pessoas e famílias que enfrentam situações de risco social ou violação de direitos.",
+      "sources": [
+        {
+          "name": "Prefeitura de Boituva — Conheça o CREAS",
+          "url": "https://www.boituva.sp.gov.br/voce-conhece-o-creas"
+        }
+      ],
+      "checkedOn": "2026-11-23",
+      "status": "verificado_em_fonte_publica"
+    },
+    {
+      "id": "disque_100",
+      "name": "Disque 100",
+      "category": "protecao_de_direitos",
+      "summary": "Canal federal para comunicar violações de direitos humanos.",
+      "channelIds": [
+        "disque100"
+      ],
+      "sources": [
+        {
+          "name": "Ministério dos Direitos Humanos e da Cidadania — Disque 100",
+          "url": "https://www.gov.br/mdh/pt-br/assuntos/noticias/2026/defeso-eleitoral/agosto/disque-100-a-denuncia-pode-ser-anonima-tire-suas-principais-duvidas/"
+        },
+        {
+          "name": "Disque 100 — fonte do catálogo",
+          "url": "https://www.gov.br/pt-br/servicos/denunciar-violacao-de-direitos-humanos"
+        }
+      ],
+      "checkedOn": "2026-11-23",
+      "status": "verificado_em_fonte_publica"
+    },
+    {
+      "id": "policia_militar",
+      "name": "Polícia Militar",
+      "category": "seguranca",
+      "summary": "Canal para situações de urgência policial.",
+      "channelIds": [
+        "policia"
+      ],
+      "sources": [
+        {
+          "name": "Polícia Militar — fonte do catálogo",
+          "url": "https://www.gov.br/mcom/pt-br/noticias/2026/setembro/emergencia-voce-sabe-para-quem-ligar-quando-precisa-de-ajuda/"
+        }
+      ],
+      "checkedOn": "2026-11-23",
+      "status": "verificado_em_fonte_publica"
+    },
+    {
+      "id": "samu",
+      "name": "SAMU",
+      "category": "saude",
+      "summary": "Canal para emergências médicas.",
+      "channelIds": [
+        "samu"
+      ],
+      "sources": [
+        {
+          "name": "SAMU — fonte do catálogo",
+          "url": "https://www.gov.br/mcom/pt-br/noticias/2026/setembro/emergencia-voce-sabe-para-quem-ligar-quando-precisa-de-ajuda/"
+        }
+      ],
+      "checkedOn": "2026-11-23",
+      "status": "verificado_em_fonte_publica"
+    }
+  ],
+  "supportTopics": [
+    {
+      "id": "necessidades_basicas",
+      "title": "Alimentação, higiene e vestuário",
+      "summary": "Procure orientação no CRAS sobre os serviços e benefícios disponíveis para sua família. A equipe pode informar as condições de acesso.",
+      "serviceIds": [
+        "cras_central",
+        "cras_novo_mundo"
+      ],
+      "sources": [
+        {
+          "name": "Prefeitura de Boituva — Conheça o CRAS",
+          "url": "https://www.boituva.sp.gov.br/voce-conhece-o-cras"
+        },
+        {
+          "name": "Estatuto da Criança e do Adolescente — Lei nº 8.069/1990",
+          "url": "https://www.planalto.gov.br/ccivil_03/leis/l8069compilado.htm"
+        }
+      ],
+      "checkedOn": "2026-11-23",
+      "status": "verificado_em_fonte_publica"
+    }
+  ]
+}

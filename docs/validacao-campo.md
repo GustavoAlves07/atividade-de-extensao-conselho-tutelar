@@ -4,7 +4,9 @@
 |---|---|---|
 | Telefone e WhatsApp do Conselho | Divulgados em página oficial da Prefeitura | Vigência, canal de plantão e funcionamento do WhatsApp fora do expediente. |
 | Atendimento presencial | Pendente de conferência com o Conselho | Endereço, ponto no mapa, horário, e-mail e acessibilidade. |
-| Rede de assistência municipal | Pendente | Unidades, contatos, horários, condições de acesso, alimentação, higiene e vestuário. |
+| CRAS Central | Telefone, WhatsApp, endereço e horário publicados pela Prefeitura em 19/11/2026 | Área atendida, condições de acesso e serviços disponíveis. |
+| CRAS Novo Mundo e CREAS | Incluídos no catálogo pelo nome e pela finalidade, com base em publicações municipais | Atualidade de contatos, endereço e horário, além da cobertura e das condições de acesso. |
+| Apoio com alimentação, higiene e vestuário | Orientação geral para procurar o CRAS | Programas locais ativos, critérios e disponibilidade. |
 | Conteúdo educativo e colaboração | Pendente | Dúvidas frequentes, responsável editorial, forma de revisão e canais para correções. |
 
 ## Revisão da próxima versão

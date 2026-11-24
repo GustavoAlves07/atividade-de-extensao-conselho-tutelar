@@ -1,0 +1,259 @@
+{
+  "schemaVersion": 1,
+  "articles": [
+    {
+      "id": "conselho_tutelar",
+      "title": "O que faz o Conselho Tutelar",
+      "summary": "O Conselho Tutelar atua para proteger os direitos de crianças e adolescentes.",
+      "sections": [
+        {
+          "heading": "Como o Conselho atua",
+          "body": "O Conselho atende crianças, adolescentes e responsáveis, aplica medidas de proteção em situações previstas no ECA e pode acionar outros serviços públicos."
+        },
+        {
+          "heading": "Quando buscar orientação",
+          "body": "Procure o Conselho se houver suspeita de violência, abandono, negligência ou outra ameaça aos direitos de uma criança ou adolescente."
+        }
+      ],
+      "channelIds": [
+        "conselho"
+      ],
+      "sources": [
+        {
+          "name": "Estatuto da Criança e do Adolescente — Lei nº 8.069/1990",
+          "url": "https://www.planalto.gov.br/ccivil_03/leis/l8069compilado.htm"
+        }
+      ],
+      "checkedOn": "2026-11-23",
+      "status": "verificado_em_fonte_publica"
+    },
+    {
+      "id": "comunicar_suspeita",
+      "title": "Como comunicar uma suspeita",
+      "summary": "Você pode procurar um canal oficial ao suspeitar de uma violação de direitos.",
+      "sections": [
+        {
+          "heading": "Quando buscar ajuda",
+          "body": "Situações de violência física, psicológica ou sexual, negligência, exploração sexual ou trabalho infantil podem exigir proteção."
+        },
+        {
+          "heading": "O que informar",
+          "body": "Conte ao canal oficial o que você sabe: o que aconteceu, onde, quando e quem precisa de ajuda. Informe os detalhes disponíveis."
+        },
+        {
+          "heading": "Como acolher",
+          "body": "Se uma criança ou adolescente contar o que aconteceu, escute com calma, acolha e preserve sua privacidade. Evite perguntas repetidas. Procure orientação na rede de proteção."
+        },
+        {
+          "heading": "Se você precisa de ajuda para si",
+          "body": "Você pode procurar um adulto de confiança ou falar com o Conselho Tutelar ou o Disque 100."
+        },
+        {
+          "heading": "Depois do contato",
+          "body": "No Disque 100, é possível fazer uma denúncia anônima e acompanhar o encaminhamento pelo protocolo informado pelo próprio serviço."
+        }
+      ],
+      "channelIds": [
+        "conselho",
+        "disque100"
+      ],
+      "sources": [
+        {
+          "name": "Estatuto da Criança e do Adolescente — Lei nº 8.069/1990",
+          "url": "https://www.planalto.gov.br/ccivil_03/leis/l8069compilado.htm"
+        },
+        {
+          "name": "Lei nº 13.431/2017",
+          "url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13431.htm"
+        },
+        {
+          "name": "Ministério dos Direitos Humanos e da Cidadania — Disque 100",
+          "url": "https://www.gov.br/mdh/pt-br/assuntos/noticias/2026/defeso-eleitoral/agosto/disque-100-a-denuncia-pode-ser-anonima-tire-suas-principais-duvidas/"
+        }
+      ],
+      "checkedOn": "2026-11-23",
+      "status": "verificado_em_fonte_publica"
+    },
+    {
+      "id": "vida_e_saude",
+      "title": "Vida e saúde",
+      "summary": "Crianças e adolescentes têm direito à proteção da vida e da saúde.",
+      "sections": [
+        {
+          "heading": "Atendimento em saúde",
+          "body": "Vacinação, prevenção e atendimento pelo SUS fazem parte da proteção à saúde."
+        }
+      ],
+      "sources": [
+        {
+          "name": "Estatuto da Criança e do Adolescente — Lei nº 8.069/1990",
+          "url": "https://www.planalto.gov.br/ccivil_03/leis/l8069compilado.htm"
+        }
+      ],
+      "checkedOn": "2026-11-23",
+      "status": "verificado_em_fonte_publica"
+    },
+    {
+      "id": "educacao",
+      "title": "Educação",
+      "summary": "Crianças e adolescentes têm direito à educação.",
+      "sections": [
+        {
+          "heading": "Acesso e permanência",
+          "body": "O ECA protege o acesso à escola, a permanência nos estudos e o respeito aos estudantes."
+        }
+      ],
+      "sources": [
+        {
+          "name": "Estatuto da Criança e do Adolescente — Lei nº 8.069/1990",
+          "url": "https://www.planalto.gov.br/ccivil_03/leis/l8069compilado.htm"
+        }
+      ],
+      "checkedOn": "2026-11-23",
+      "status": "verificado_em_fonte_publica"
+    },
+    {
+      "id": "convivencia",
+      "title": "Convivência familiar e comunitária",
+      "summary": "Crianças e adolescentes têm direito a crescer em um ambiente que garanta seu desenvolvimento.",
+      "sections": [
+        {
+          "heading": "Apoio à família",
+          "body": "A falta de recursos materiais, por si só, não é motivo suficiente para perda ou suspensão do poder familiar. Famílias podem buscar orientação na assistência social."
+        }
+      ],
+      "serviceIds": [
+        "cras_central",
+        "cras_novo_mundo"
+      ],
+      "sources": [
+        {
+          "name": "Estatuto da Criança e do Adolescente — Lei nº 8.069/1990",
+          "url": "https://www.planalto.gov.br/ccivil_03/leis/l8069compilado.htm"
+        },
+        {
+          "name": "Prefeitura de Boituva — Conheça o CRAS",
+          "url": "https://www.boituva.sp.gov.br/voce-conhece-o-cras"
+        }
+      ],
+      "checkedOn": "2026-11-23",
+      "status": "verificado_em_fonte_publica"
+    },
+    {
+      "id": "dignidade_e_respeito",
+      "title": "Dignidade e respeito",
+      "summary": "Crianças e adolescentes têm direito à privacidade e ao respeito.",
+      "sections": [
+        {
+          "heading": "Proteção contra violência",
+          "body": "A proteção inclui a integridade física e emocional e o direito a um tratamento livre de violência e humilhação."
+        }
+      ],
+      "sources": [
+        {
+          "name": "Estatuto da Criança e do Adolescente — Lei nº 8.069/1990",
+          "url": "https://www.planalto.gov.br/ccivil_03/leis/l8069compilado.htm"
+        },
+        {
+          "name": "Lei nº 13.431/2017",
+          "url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13431.htm"
+        }
+      ],
+      "checkedOn": "2026-11-23",
+      "status": "verificado_em_fonte_publica"
+    },
+    {
+      "id": "cultura_esporte_e_lazer",
+      "title": "Cultura, esporte e lazer",
+      "summary": "Brincar, praticar esportes e participar da vida cultural fazem parte dos direitos de crianças e adolescentes.",
+      "sections": [
+        {
+          "heading": "Participação",
+          "body": "Família, comunidade, sociedade e poder público compartilham a responsabilidade de garantir esses direitos."
+        }
+      ],
+      "sources": [
+        {
+          "name": "Estatuto da Criança e do Adolescente — Lei nº 8.069/1990",
+          "url": "https://www.planalto.gov.br/ccivil_03/leis/l8069compilado.htm"
+        }
+      ],
+      "checkedOn": "2026-11-23",
+      "status": "verificado_em_fonte_publica"
+    }
+  ],
+  "faq": [
+    {
+      "id": "posso_comunicar_suspeita",
+      "question": "Posso comunicar uma suspeita?",
+      "answer": "Sim. Procure orientação em um canal oficial e conte o que você sabe sobre a situação.",
+      "articleId": "comunicar_suspeita",
+      "sources": [
+        {
+          "name": "Estatuto da Criança e do Adolescente — Lei nº 8.069/1990",
+          "url": "https://www.planalto.gov.br/ccivil_03/leis/l8069compilado.htm"
+        },
+        {
+          "name": "Lei nº 13.431/2017",
+          "url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13431.htm"
+        }
+      ],
+      "checkedOn": "2026-11-23",
+      "status": "verificado_em_fonte_publica"
+    },
+    {
+      "id": "denuncia_anonima",
+      "question": "Posso denunciar anonimamente?",
+      "answer": "No Disque 100, você pode registrar uma denúncia anônima e acompanhar seu encaminhamento com o protocolo fornecido pelo serviço.",
+      "articleId": "comunicar_suspeita",
+      "sources": [
+        {
+          "name": "Ministério dos Direitos Humanos e da Cidadania — Disque 100",
+          "url": "https://www.gov.br/mdh/pt-br/assuntos/noticias/2026/defeso-eleitoral/agosto/disque-100-a-denuncia-pode-ser-anonima-tire-suas-principais-duvidas/"
+        }
+      ],
+      "checkedOn": "2026-11-23",
+      "status": "verificado_em_fonte_publica"
+    },
+    {
+      "id": "quem_pode_pedir_ajuda",
+      "question": "Quem pode pedir ajuda?",
+      "answer": "Crianças, adolescentes, familiares e outras pessoas podem procurar orientação ao perceber uma ameaça ou violação de direitos.",
+      "articleId": "comunicar_suspeita",
+      "sources": [
+        {
+          "name": "Estatuto da Criança e do Adolescente — Lei nº 8.069/1990",
+          "url": "https://www.planalto.gov.br/ccivil_03/leis/l8069compilado.htm"
+        },
+        {
+          "name": "Lei nº 13.431/2017",
+          "url": "https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2017/lei/l13431.htm"
+        }
+      ],
+      "checkedOn": "2026-11-23",
+      "status": "verificado_em_fonte_publica"
+    },
+    {
+      "id": "diferenca_entre_servicos",
+      "question": "Qual é a diferença entre Conselho Tutelar, CRAS e CREAS?",
+      "answer": "O Conselho Tutelar atua na proteção dos direitos de crianças e adolescentes. O CRAS orienta famílias em situação de vulnerabilidade. O CREAS presta atendimento especializado em situações de risco social ou violação de direitos.",
+      "articleId": "conselho_tutelar",
+      "sources": [
+        {
+          "name": "Estatuto da Criança e do Adolescente — Lei nº 8.069/1990",
+          "url": "https://www.planalto.gov.br/ccivil_03/leis/l8069compilado.htm"
+        },
+        {
+          "name": "Prefeitura de Boituva — Conheça o CRAS",
+          "url": "https://www.boituva.sp.gov.br/voce-conhece-o-cras"
+        },
+        {
+          "name": "Prefeitura de Boituva — Conheça o CREAS",
+          "url": "https://www.boituva.sp.gov.br/voce-conhece-o-creas"
+        }
+      ],
+      "checkedOn": "2026-11-23",
+      "status": "verificado_em_fonte_publica"
+    }
+  ]
+}

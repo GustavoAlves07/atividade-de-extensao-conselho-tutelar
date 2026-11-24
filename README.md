@@ -21,6 +21,8 @@ O último comando requer um emulador ou dispositivo conectado. No Windows, use `
 
 O catálogo de produção fica em `app/src/main/assets/canais.json`. Os testes de interface usam uma fixture do APK de teste. Para adicionar um contato, inclua ID, nome, categoria, telefone, fonte, data de conferência e estado. Use `whatsapp` com DDI e DDD e `website` com HTTPS, quando disponíveis.
 
+O conteúdo offline em preparação fica em `app/src/main/assets/guia.json` (RF03 e RF04) e `app/src/main/assets/rede_protecao.json` (RF05). Os arquivos usam `schemaVersion` e registram fontes, data de conferência e estado editorial. `channelIds` aponta para os IDs de `canais.json`, `articleId` aponta para os artigos do guia e `serviceIds` aponta para os serviços da rede. Os campos municipais opcionais entram à medida que são confirmados. A leitura dos dois novos arquivos pelas telas está planejada.
+
 ## Acompanhamento
 
 - [Instruções para o Codex](AGENTS.md)
