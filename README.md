@@ -25,4 +25,5 @@ O catálogo de produção fica em `app/src/main/assets/canais.json`. Os testes d
 
 - [Instruções para o Codex](AGENTS.md)
 - [Requisitos e evidências](docs/requisitos.md)
+- [Plano de layout das telas](docs/Plano_de_layout_Conselho_Tutelar.md)
 - [Validação de campo e publicação](docs/validacao-campo.md)
