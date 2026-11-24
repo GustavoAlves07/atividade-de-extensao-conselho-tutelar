@@ -43,6 +43,18 @@ A ordem em cada linha corresponde ao que aparece de cima para baixo no celular. 
 
 **Colaboração editorial (RF07).** A revisão acontece no processo do projeto, com fonte, data, responsável e aprovação registrados em `docs/validacao-campo.md`. A parte visível no app é a referência e a data de conferência de cada conteúdo.
 
+## Dados de referência para as telas
+
+Os arquivos ficam em `app/src/main/assets/` e são distribuídos no APK para consulta offline.
+
+| Telas | Arquivo e campos |
+| --- | --- |
+| Início e Preciso de ajuda (RF01 e RF02) | [`canais.json`](../app/src/main/assets/canais.json). Use os registros do catálogo para números e ações externas. O atalho do 190 usa o ID `policia`. |
+| Orientação sobre suspeita, Conheça seus direitos e artigo do guia (RF03 e RF04) | [`guia.json`](../app/src/main/assets/guia.json). A orientação usa o artigo `comunicar_suspeita`. O guia lê `articles` e `faq`, e cada `articleId` da FAQ aponta para o artigo correspondente. |
+| Rede de proteção e ficha do serviço (RF05) | [`rede_protecao.json`](../app/src/main/assets/rede_protecao.json). Use `services` para as fichas e `supportTopics` para as orientações por necessidade. Exiba campos opcionais de contato e atendimento quando estiverem presentes. |
+
+Em `guia.json` e `rede_protecao.json`, `channelIds` aponta para os registros de `canais.json`, e `serviceIds` aponta para `services` em `rede_protecao.json`. Use as referências para reaproveitar os contatos. Mostre a fonte e a data de conferência conforme o layout de cada tela.
+
 ## Componentes e estados
 
 | Elemento ou situação | Especificação |
