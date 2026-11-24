@@ -1,0 +1,27 @@
+[
+  {
+    "id": "policia", "name": "Polícia Militar", "category": "policial",
+    "phone": "190",
+    "source": "https://www.gov.br/mcom/pt-br/noticias/2026/setembro/emergencia-voce-sabe-para-quem-ligar-quando-precisa-de-ajuda/",
+    "checkedOn": "2026-11-23", "status": "verificado_em_fonte_publica"
+  },
+  {
+    "id": "samu", "name": "SAMU", "category": "medica",
+    "phone": "192",
+    "source": "https://www.gov.br/mcom/pt-br/noticias/2026/setembro/emergencia-voce-sabe-para-quem-ligar-quando-precisa-de-ajuda/",
+    "checkedOn": "2026-11-23", "status": "verificado_em_fonte_publica"
+  },
+  {
+    "id": "conselho", "name": "Conselho Tutelar de Boituva", "category": "suspeita",
+    "phone": "15996792763", "whatsapp": "5515996792763",
+    "source": "https://www.boituva.sp.gov.br/imprensa/noticias/maio-laranja-5",
+    "checkedOn": "2026-11-23", "status": "verificado_em_fonte_publica"
+  },
+  {
+    "id": "disque100", "name": "Disque 100", "category": "suspeita",
+    "phone": "100", "whatsapp": "5561996110100",
+    "website": "https://www.gov.br/pt-br/servicos/denunciar-violacao-de-direitos-humanos",
+    "source": "https://www.gov.br/pt-br/servicos/denunciar-violacao-de-direitos-humanos",
+    "checkedOn": "2026-11-23", "status": "verificado_em_fonte_publica"
+  }
+]

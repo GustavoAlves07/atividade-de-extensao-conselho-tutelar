@@ -1,0 +1,17 @@
+[
+  {
+    "id": "policia_teste", "name": "Polícia de exemplo", "category": "policial",
+    "phone": "000", "source": "https://example.org/policia",
+    "checkedOn": "2026-01-01", "status": "verificado_em_fonte_publica"
+  },
+  {
+    "id": "samu_teste", "name": "Ambulância de exemplo", "category": "medica",
+    "phone": "001", "source": "https://example.org/ambulancia",
+    "checkedOn": "2026-01-01", "status": "verificado_em_fonte_publica"
+  },
+  {
+    "id": "conselho_teste", "name": "Conselho de exemplo", "category": "suspeita",
+    "phone": "002", "source": "https://example.org/conselho",
+    "checkedOn": "2026-01-01", "status": "verificado_em_fonte_publica"
+  }
+]
