@@ -1,4 +1,4 @@
-package br.com.boituva.conselhotutelar
+package br.com.boituva.conselhotutelar.presentation.ui
 
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.BorderStroke
@@ -26,15 +26,22 @@ import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.semantics.stateDescription
 import androidx.compose.ui.unit.dp
-import java.text.SimpleDateFormat
-import java.util.Date
-import java.util.Locale
-import java.util.TimeZone
+import br.com.boituva.conselhotutelar.R
+import br.com.boituva.conselhotutelar.domain.COUNCIL_ARTICLE_ID
+import br.com.boituva.conselhotutelar.domain.REPORT_ARTICLE_ID
+import br.com.boituva.conselhotutelar.domain.Campaign
+import br.com.boituva.conselhotutelar.domain.Channel
+import br.com.boituva.conselhotutelar.domain.ContentCatalog
+import br.com.boituva.conselhotutelar.domain.EditorialChannel
+import br.com.boituva.conselhotutelar.domain.GuideArticle
+import br.com.boituva.conselhotutelar.domain.NetworkService
+import br.com.boituva.conselhotutelar.domain.References
+import br.com.boituva.conselhotutelar.presentation.ExternalAction
 
 @Composable
 internal fun HomeScreen(
     channels: List<Channel>,
-    campaigns: List<Campaign>,
+    activeCampaigns: List<Campaign>,
     openAction: (ExternalAction) -> Unit,
     onHelp: () -> Unit,
     onRights: () -> Unit,
@@ -64,10 +71,6 @@ internal fun HomeScreen(
         ContentCard("Sobre o projeto", R.drawable.ic_info, onClick = onAbout)
     }
 
-    val today = SimpleDateFormat("yyyy-MM-dd", Locale.ROOT).apply {
-        timeZone = TimeZone.getTimeZone("America/Sao_Paulo")
-    }.format(Date())
-    val activeCampaigns = campaigns.filter { it.isActiveOn(today) }
     if (activeCampaigns.isNotEmpty()) {
         SectionHeading("Campanhas e materiais educativos")
         activeCampaigns.forEach { CampaignCard(it, openAction) }
@@ -108,13 +111,13 @@ internal fun RightsScreen(
         "Conheça seus direitos", R.drawable.ic_book, Tone.BLUE,
         "Orientações sobre o Conselho Tutelar e o Estatuto da Criança e do Adolescente.",
     )
-    content.articles.firstOrNull { it.id == "conselho_tutelar" }?.let { article ->
+    content.article(COUNCIL_ARTICLE_ID)?.let { article ->
         ContentCard(article.title, R.drawable.ic_shield, summary = article.summary) { openArticle(article.id) }
     }
-    content.articles.firstOrNull { it.id == REPORT_ARTICLE }?.let { article ->
+    content.article(REPORT_ARTICLE_ID)?.let { article ->
         ContentCard(article.title, R.drawable.ic_message, Tone.AMBER, emphasized = true) { openArticle(article.id) }
     }
-    val themes = content.articles.filter { it.id != "conselho_tutelar" && it.id != REPORT_ARTICLE }
+    val themes = content.articles.filter { it.id != COUNCIL_ARTICLE_ID && it.id != REPORT_ARTICLE_ID }
     if (themes.isNotEmpty()) {
         Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
             SectionHeading("Temas do ECA")

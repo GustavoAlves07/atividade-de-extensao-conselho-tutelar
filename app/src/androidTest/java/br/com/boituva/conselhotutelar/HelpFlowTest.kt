@@ -1,13 +1,17 @@
 package br.com.boituva.conselhotutelar
 
 import android.content.Intent
+import androidx.activity.ComponentActivity
 import androidx.compose.ui.test.assertIsDisplayed
-import androidx.compose.ui.test.junit4.createComposeRule
+import androidx.compose.ui.test.junit4.createAndroidComposeRule
 import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.performScrollTo
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import androidx.test.platform.app.InstrumentationRegistry
+import br.com.boituva.conselhotutelar.platform.toIntent
+import br.com.boituva.conselhotutelar.presentation.CatalogUiState
+import br.com.boituva.conselhotutelar.presentation.ExternalAction
+import br.com.boituva.conselhotutelar.presentation.ui.CouncilRoute
 import org.junit.Assert.assertEquals
 import org.junit.Rule
 import org.junit.Test
@@ -16,18 +20,16 @@ import org.junit.runner.RunWith
 @RunWith(AndroidJUnit4::class)
 class HelpFlowTest {
     @get:Rule
-    val compose = createComposeRule()
+    val compose = createAndroidComposeRule<ComponentActivity>()
 
     @Test
     fun navigatesToHelpAndCapturesDialWithoutOpeningExternalApps() {
         val actions = mutableListOf<ExternalAction>()
         val copiedNumbers = mutableListOf<String>()
-        val assets = InstrumentationRegistry.getInstrumentation().context.assets
-        val channels = loadChannels(assets)
-
+        val viewModel = compose.runOnUiThread { compose.activity.fixtureViewModel() }
         compose.setContent {
-            HelpApp(
-                channels = channels,
+            CouncilRoute(
+                viewModel = viewModel,
                 openAction = {
                     actions.add(it)
                     actions.size == 1
@@ -35,6 +37,7 @@ class HelpFlowTest {
                 copyPhone = { _, number -> copiedNumbers.add(number) },
             )
         }
+        compose.waitUntil { viewModel.state.value.catalog is CatalogUiState.Ready }
 
         compose.onNodeWithText("Polícia de exemplo").performScrollTo().performClick()
         compose.onNodeWithText("Preciso de ajuda").performClick()

@@ -8,6 +8,12 @@ O **Início** abre os canais oficiais em **Preciso de ajuda**. **Direitos** reú
 
 Instale o JDK 17, Python 3.9 ou mais recente e Android SDK com a plataforma 35. Para testes de interface, use um emulador ou dispositivo com depuração habilitada. Abra a raiz do projeto no Android Studio para sincronizar pelo Gradle Wrapper.
 
+## Arquitetura
+
+O app segue Clean Architecture com MVVM em um módulo Gradle. `domain` define o catálogo e o contrato do repositório em Kotlin. `data` lê os arquivos do APK em uma thread de I/O e converte os registros em modelos do domínio. `presentation` expõe o estado de carregamento, a navegação e os avisos pelo `CouncilViewModel`. As telas Compose observam o estado com o ciclo de vida e mantêm o estado visual local, como posição da rolagem e seções expandidas.
+
+A `MainActivity` injeta o repositório e conecta a interface a `platform`, que traduz ações em intents ou usa a área de transferência. O histórico de navegação é restaurado pelo `SavedStateHandle`.
+
 ## Verificações
 
 ```sh

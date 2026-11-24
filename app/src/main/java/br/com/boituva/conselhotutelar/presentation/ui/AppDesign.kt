@@ -1,9 +1,9 @@
-package br.com.boituva.conselhotutelar
+package br.com.boituva.conselhotutelar.presentation.ui
 
 import androidx.annotation.DrawableRes
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
-import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -41,6 +41,7 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import br.com.boituva.conselhotutelar.R
 
 internal enum class Tone(val background: Color, val ink: Color) {
     GREEN(Color(0xFFDFF1E8), Color(0xFF12584A)),

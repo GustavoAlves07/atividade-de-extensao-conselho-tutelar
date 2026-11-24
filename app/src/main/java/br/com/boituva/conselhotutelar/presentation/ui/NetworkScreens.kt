@@ -1,4 +1,4 @@
-package br.com.boituva.conselhotutelar
+package br.com.boituva.conselhotutelar.presentation.ui
 
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.layout.Arrangement
@@ -11,6 +11,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import br.com.boituva.conselhotutelar.R
+import br.com.boituva.conselhotutelar.domain.Channel
+import br.com.boituva.conselhotutelar.domain.ContentCatalog
+import br.com.boituva.conselhotutelar.domain.NetworkService
+import br.com.boituva.conselhotutelar.domain.SupportTopic
+import br.com.boituva.conselhotutelar.presentation.ExternalAction
 
 internal enum class ServiceCategory(
     val key: String,

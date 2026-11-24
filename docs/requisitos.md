@@ -14,7 +14,7 @@ Baseado no levantamento de informações do projeto. **Implementado** indica có
 | RF08 | Sugestão de correções | Implementado em Sobre para um destino editorial aprovado. A tela direciona relatos aos canais oficiais de ajuda. `ContentFlowTest` verifica o encaminhamento com destino fictício. Canal oficial pendente. |
 | RNF01 | Acesso público e privacidade | As jornadas são públicas e o manifesto dispensa permissões de telefone, localização e internet. O app encaminha aos serviços externos e dispensa cadastro e formulários de relatos. |
 | RNF02 | Acessibilidade Android | Navegação, categorias e ações combinam ícones com rótulos. Controles com áreas mínimas de toque de 48 dp, cabeçalhos semânticos, seleção na navegação e estado acessível para seções expansíveis. Contraste das combinações principais de texto e fundo acima de 4,5:1. Validação com TalkBack em dispositivo pendente. |
-| RNF03 | Consulta offline | Contatos, artigos, perguntas e fichas são carregados do APK. `verifyContent` valida os arquivos e os vínculos. Abertura a frio e consulta em modo avião conferidas no emulador. |
+| RNF03 | Consulta offline | O repositório lê contatos, artigos, perguntas e fichas do APK em I/O. O ViewModel expõe carregamento, falha e nova tentativa. `verifyContent` valida arquivos e vínculos. |
 | RNF04 | Conteúdo atualizado | O validador exige fonte, data e estado editorial, confirma referências e verifica destinos e datas de vigência. Confirmação do responsável e pendências de dados seguem em Validação de campo. |
 | RNF05 | Comunicação clara | As ações identificam o discador ou serviço externo. Os números podem ser copiados e os endereços ficam visíveis na ficha, inclusive se o mapa falhar. |
 | RNF06 | Identificação institucional | Início e Sobre identificam o projeto acadêmico. Sobre apresenta o objetivo e as fontes de referência. Materiais de identidade institucional aguardam aprovação. |
@@ -32,3 +32,10 @@ Baseado no levantamento de informações do projeto. **Implementado** indica có
 - Início, Ajuda, Direitos, Rede, fichas, orientações e Sobre revisados com a nova identidade. Ações e categorias usam ícone e texto, com destaque visual para o 190.
 - Oito testes Python, dois testes unitários Android e cinco testes instrumentados aprovados. APK de depuração compilado e lint sem erros, com três avisos sobre versões de dependências e regras de backup.
 - Capturas conferidas no emulador Android 13. Leitura do 190, da orientação do Disque 100 e da ficha do CRAS Central conferida em modo avião com fonte a 150%.
+
+## Migração para Clean Architecture com MVVM em 23/11/2026
+
+- RF01–RF06, RF08, RNF03 e RNF05. O repositório offline e as integrações Android foram separados da apresentação. O ViewModel mantém o estado, o histórico de navegação e os avisos das ações externas.
+- Os cinco testes unitários passaram, incluindo restauração da navegação, nova tentativa após falha de leitura e atualização da vigência das campanhas. Os cinco testes instrumentados passaram no emulador Android 13 usando os arquivos fictícios e interceptando ações externas.
+- Os oito testes Python e a validação do catálogo passaram. O APK de depuração compilou e o lint registrou zero erros e seis avisos sobre dependências e backup.
+- A abertura a frio em modo avião com fonte a 150% permitiu ler o 190, a orientação do Disque 100 e o endereço do CRAS Central.

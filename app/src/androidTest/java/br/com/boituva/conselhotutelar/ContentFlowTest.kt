@@ -8,7 +8,10 @@ import androidx.compose.ui.test.onNodeWithText
 import androidx.compose.ui.test.performClick
 import androidx.compose.ui.test.performScrollTo
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import androidx.test.platform.app.InstrumentationRegistry
+import br.com.boituva.conselhotutelar.platform.toIntent
+import br.com.boituva.conselhotutelar.presentation.CatalogUiState
+import br.com.boituva.conselhotutelar.presentation.ExternalAction
+import br.com.boituva.conselhotutelar.presentation.ui.CouncilRoute
 import org.junit.Assert.assertEquals
 import org.junit.Rule
 import org.junit.Test
@@ -102,17 +105,15 @@ class ContentFlowTest {
     }
 
     private fun openApp() {
-        val assets = InstrumentationRegistry.getInstrumentation().context.assets
-        val channels = loadChannels(assets)
-        val content = loadContent(assets)
+        val viewModel = compose.runOnUiThread { compose.activity.fixtureViewModel() }
         compose.setContent {
-            HelpApp(
-                channels = channels,
-                content = content,
+            CouncilRoute(
+                viewModel = viewModel,
                 openAction = { actions.add(it) },
                 copyPhone = { _, _ -> },
             )
         }
+        compose.waitUntil { viewModel.state.value.catalog is CatalogUiState.Ready }
     }
 
     private fun click(text: String) {

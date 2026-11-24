@@ -1,86 +1,26 @@
-package br.com.boituva.conselhotutelar
+package br.com.boituva.conselhotutelar.data
 
 import android.content.res.AssetManager
+import br.com.boituva.conselhotutelar.domain.ArticleSection
+import br.com.boituva.conselhotutelar.domain.Campaign
+import br.com.boituva.conselhotutelar.domain.Channel
+import br.com.boituva.conselhotutelar.domain.ContentCatalog
+import br.com.boituva.conselhotutelar.domain.EditorialChannel
+import br.com.boituva.conselhotutelar.domain.GuideArticle
+import br.com.boituva.conselhotutelar.domain.GuideQuestion
+import br.com.boituva.conselhotutelar.domain.NetworkService
+import br.com.boituva.conselhotutelar.domain.References
+import br.com.boituva.conselhotutelar.domain.Source
+import br.com.boituva.conselhotutelar.domain.SupportTopic
 import org.json.JSONObject
 
-internal data class Source(val name: String, val url: String)
-
-internal data class References(val sources: List<Source>, val checkedOn: String)
-
-internal data class GuideArticle(
-    val id: String,
-    val title: String,
-    val summary: String,
-    val sections: List<ArticleSection>,
-    val channelIds: List<String>,
-    val serviceIds: List<String>,
-    val references: References,
-)
-
-internal data class ArticleSection(val heading: String, val body: String)
-
-internal data class GuideQuestion(
-    val id: String,
-    val question: String,
-    val answer: String,
-    val articleId: String?,
-    val references: References,
-)
-
-internal data class NetworkService(
-    val id: String,
-    val name: String,
-    val category: String,
-    val summary: String,
-    val channelIds: List<String>,
-    val phone: String?,
-    val whatsapp: String?,
-    val website: String?,
-    val address: String?,
-    val openingHours: String?,
-    val coverage: String?,
-    val accessConditions: String?,
-    val accessibility: String?,
-    val references: References,
-)
-
-internal data class SupportTopic(
-    val id: String,
-    val title: String,
-    val summary: String,
-    val serviceIds: List<String>,
-    val references: References,
-)
-
-internal data class Campaign(
-    val title: String,
-    val summary: String,
-    val materialUrl: String,
-    val startsOn: String?,
-    val endsOn: String?,
-    val references: References,
-) {
-    fun isActiveOn(day: String): Boolean =
-        (startsOn == null || startsOn <= day) && (endsOn == null || day <= endsOn)
-}
-
-internal data class EditorialChannel(val url: String, val references: References)
-
-internal data class ContentCatalog(
-    val articles: List<GuideArticle> = emptyList(),
-    val questions: List<GuideQuestion> = emptyList(),
-    val services: List<NetworkService> = emptyList(),
-    val supportTopics: List<SupportTopic> = emptyList(),
-    val campaigns: List<Campaign> = emptyList(),
-    val editorialChannel: EditorialChannel? = null,
-)
-
-internal fun loadContent(assets: AssetManager): ContentCatalog {
+internal fun readContent(assets: AssetManager, channels: List<Channel>): ContentCatalog {
     val guide = assets.readContent("guia.json")
     val network = assets.readContent("rede_protecao.json")
     val editorial = assets.readContent("editorial.json")
 
     return ContentCatalog(
+        channels = channels,
         articles = guide.records("articles").filter { it.isPublished() }.map {
             GuideArticle(
                 id = it.getString("id"),
